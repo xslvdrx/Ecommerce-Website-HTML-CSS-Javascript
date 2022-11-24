@@ -295,7 +295,7 @@ h4 {
 nav .fly-item {
     top: 50%;
     margin-top: -24px;
-    width: 30px;
+    width: 32px;
     border-radius: 3px;
     right: -32px;
     background-color: var(--primary-color);
@@ -318,7 +318,13 @@ nav .fly-item {
     border-radius: var(--percent50);
 }
 
-
+.mega .flexcol {
+    flex: 1;
+    min-width: 180px;
+    padding-right: 2.5em;
+    margin-bottom: 1.5em;
+    z-index: 1;
+}
 
 
 
@@ -354,5 +360,33 @@ nav .fly-item {
 
     .header-nav .right li > a {
         margin-left: 1em;
+    }
+
+    /* mega menu */
+    nav .mega {
+        position: absolute;
+        width: var(--percent100);
+        height: auto;
+        top: auto;
+        left: 0;
+        right: 0;
+        padding: 2.5em;
+        line-height: 2em;
+        background-color: var(--light-bg-color);
+        box-shadow: rgb(0, 0, 0 / 20%) 0 30px 20px -30px;
+        z-index: 100;
+    }
+
+    nav .mega .wrapper {
+        display: flex;
+    }
+
+    nav .mega h4 {
+        font-size: 0.8em;
+        text-transform: uppercase;
+    }
+
+    nav .mega ul {
+        
     }
 }
