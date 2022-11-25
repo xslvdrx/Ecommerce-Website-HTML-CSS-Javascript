@@ -174,6 +174,69 @@ h4 {
     display: none;
 }
 
+.object-cover img {
+    position: absolute;
+    object-fit: cover;
+    width: var(--percent100);
+    height: var(--percent100);
+    display: block;
+}
+
+.products .media {
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.primary-button, .secondary-button, .light-button {
+    font-size: var(--font-small);
+    padding: 0.9em 2em;
+    height: auto;
+    width: fit-content;
+    border-radius: 2em;
+    transition: var(--trans-background-color);
+}
+
+.primary-button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.primary-button:hover {
+    background-color: var(--dark-color);
+}
+
+.secondary-button {
+    background-color: var(--secondary-dark-color);
+    color: var(--white-color);
+}
+
+.secondary-button:hover {
+    background-color: var(--light-bg-color);
+    color: var(--secondary-dark-color);
+}
+
+.light-button {
+    background-color: var(--light-bg-color);
+}
+
+.light-button:hover {
+    background-color: var(--secondary-dark-color);
+    color: var(--white-color);
+}
+
+.view-all {
+    font-size: var(--font-small);
+    display: flex;
+    gap: 1em;
+    transition: var(--trans-color);
+}
+
+
+
+
+
+
 /* ---------------
  * ---- HEADER ----
  * -------------- */
@@ -375,6 +438,12 @@ nav .fly-item {
         background-color: var(--light-bg-color);
         box-shadow: rgb(0, 0, 0 / 20%) 0 30px 20px -30px;
         z-index: 100;
+
+        display: none;
+    }
+
+    nav li.has-child:hover .mega {
+        display: block;
     }
 
     nav .mega .wrapper {
@@ -387,6 +456,55 @@ nav .fly-item {
     }
 
     nav .mega ul {
-        
+        font-size: var(--font-small);
+    }
+
+    nav .mega .women-brands {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 180px;
+
+    }
+
+    nav .mega .women-brands li {
+        min-width: 80px;
+    }
+
+    nav .mega .view-all {
+        margin-top: 1em;
+    }
+
+    nav .mega .products {
+        flex: 2;
+        padding: 0;
+        align-items: center;
+        position: relative;
+    }
+
+    nav .mega .products .row {
+        width: var(--percent100);
+    }
+
+    nav .mega .products .media {
+        height: 400px;
+    }
+
+    nav .mega .products .text-content {
+        line-height: initial;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+        margin-top: 0.5em;
+        position: absolute;
+        bottom: 4em;
+        width: var(--percent100);
+    }
+    
+    nav .mega .products .text-content h4 {
+        font-size: 2em;
+        font-weight: var(--fw8);
+        text-align: center;
+        color: var(--secondary-dark-color);
     }
 }
