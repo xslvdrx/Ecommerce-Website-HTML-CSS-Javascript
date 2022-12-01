@@ -62,3 +62,35 @@ searchButton.addEventListener("click", function () {
 tClose.addEventListener("click", function () {
 	showClass.classList.remove("showsearch");
 });
+
+//show dpt menu
+const dptButton = document.querySelector(".dpt-cat .dpt-trigger"),
+	dptClass = document.querySelector(".site");
+dptButton.addEventListener("click", function () {
+	dptClass.classList.toggle("showdpt");
+});
+
+//product image slider
+var productThumb = new Swiper(".small-image", {
+	loop: true,
+	spaceBetween: 10,
+	slidesPerView: 3,
+	freeMode: true,
+	watchSlidesProgress: true,
+	breakpoints: {
+		481: {
+			spaceBetween: 32,
+		},
+	},
+});
+var productBig = new Swiper(".big-image", {
+	loop: true,
+	autoHeight: true,
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+	thumbs: {
+		swiper: productThumb,
+	},
+});

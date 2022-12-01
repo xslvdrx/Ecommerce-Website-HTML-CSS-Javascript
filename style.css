@@ -1267,11 +1267,461 @@ form.search button:hover {
 }
 
 /* ----------------------
+ * 08. Page Single 
+ *--------------------- */
+
+/* 08. Page single
+ * a. Department menu
+ *--------------------- */
+
+.page-home .dpt-cat .dpt-trigger,
+.dpt-trigger .ri-close-line,
+.showdpt .dpt-trigger .ri-menu-3-line {
+	display: none;
+}
+
+.showdpt .dpt-trigger .ri-close-line {
+	display: block;
+}
+
+/* 08. Page single
+ * b. Breadcrumb
+ *--------------------- */
+
+.breadcrumb {
+	font-size: var(--font-small);
+	margin-bottom: 2em;
+}
+
+.breadcrumb li:not(:last-child)::after {
+	content: "/";
+	padding: 0 0.35em;
+}
+
+.breadcrumb li:last-child {
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: var(--light-text-color);
+}
+
+/* 08. Page single
+ * c. Product details
+ *--------------------- */
+
+.products.one .item {
+	flex-direction: column;
+}
+
+.products.one .price .discount {
+	font-size: 1em;
+	font-weight: var(--fw7);
+	line-height: 1;
+	position: absolute;
+	top: 0;
+	bottom: auto;
+	padding: 1em;
+	z-index: 2;
+	background-color: var(--dark-color);
+	color: var(--white-color);
+	border-radius: var(--percent50);
+	margin: 0.5em;
+}
+
+.products.one :where(.big-image, .small-image) {
+	overflow: hidden;
+}
+
+.products.one .big-image {
+	position: relative;
+	margin-bottom: 1em;
+}
+
+.products.one :where(.big-image, .small-image) img {
+	object-fit: cover;
+	width: var(--percent100);
+	height: var(--percent100);
+	display: block;
+}
+
+.products.one .thumbnail-show {
+	position: relative;
+	width: 130px;
+	height: 110px;
+	overflow: hidden;
+	margin: 0 2em 2em 0;
+}
+
+.products :is(.swiper-button-next, .swiper-button-prev) {
+	outline: 0;
+	color: var(--secondary-dark-color);
+	transition: var(--trans-background), transform 0.3s;
+}
+
+.products .big-image:hover .swiper-button-next {
+	transform: translateX(10px);
+}
+
+.products .big-image:hover .swiper-button-prev {
+	transform: translateX(-10px);
+}
+
+.products :is(.swiper-button-next, .swiper-button-prev)::after {
+	font-size: 1.5em;
+}
+
+.products .big-image:hover :is(.swiper-button-next, .swiper-button-prev) {
+	background-color: var(--light-bg-color);
+}
+
+/* lightbox: go to fslightbox.com */
+
+/* 08. Page single
+ * d. Product description
+ *--------------------- */
+
+.products.one .available {
+	font-size: var(--font-small);
+	font-weight: var(--fw5);
+	padding: 0.5em;
+	margin-right: 1em;
+	border-radius: 3px;
+	color: #10ac84;
+	background-color: var(--light-bg-color);
+}
+
+.products.one .add-review {
+	color: var(--dark-color);
+}
+
+.product.one .price {
+	display: flex;
+	gap: 1em;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.products.one .price .current {
+	font-size: 2.5em;
+}
+
+.products .variant form {
+	display: flex;
+	margin-top: 0.5em;
+}
+
+.products .variant form p {
+	position: relative;
+	margin: 0 0.5em 0.5em;
+}
+
+.products :where(.variant, .actions) .circle {
+	display: block;
+	position: static;
+	top: 0;
+	margin: 0;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.products .variant input {
+	clip: rect(0, 0, 0, 0);
+	overflow: hidden;
+	position: absolute;
+	height: 0;
+	width: 0;
+}
+
+.products .variant label::before {
+	opacity: 1;
+}
+
+.products .variant label[for="cogrey"]::before {
+	background-color: #576574;
+}
+
+.products .variant label[for="coblue"]::before {
+	background-color: #45a0ff;
+}
+
+.products .variant label[for="cogreen"]::before {
+	background-color: #1dd1a1;
+}
+
+.single-product .variant form p input:checked + label {
+	background-color: transparent;
+	border: 2px solid var(--dark-color);
+	color: var(--white-color);
+}
+
+.products .sizes .variant label::before {
+	background-color: var(--white-color);
+}
+
+.products .sizes .variant label span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: var(--percent100);
+	height: var(--percent100);
+	font-size: 0.85em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.single-product .sizes .variant form p input:checked + label::before {
+	background-color: var(--dark-color);
+	opacity: 1;
+}
+
+.products .actions {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 2em;
+}
+
+.products .qty-control {
+	width: fit-content;
+	padding: 0.5em;
+	border: 1px solid var(--border-color);
+	margin: 0 2em 2em 0;
+}
+
+.products .actions :where(input, button) {
+	font-size: 1.25em;
+	outline: 0;
+	border: 0;
+}
+
+.products .actions input {
+	width: 50px;
+	text-align: center;
+}
+
+.products .qty-control button::before {
+	background-color: transparent;
+}
+
+.products .actions .button-cart {
+	flex: 1;
+	min-width: 200px;
+}
+
+.products .actions .button-cart button {
+	width: var(--percent100);
+	cursor: pointer;
+}
+
+.wish-share a {
+	display: flex;
+	align-items: center;
+	text-transform: uppercase;
+	font-weight: var(--fw7);
+	margin: 1em 2em 1em 0;
+	transition: var(--trans-color);
+}
+
+/* 08. Page single
+ * e. Product Review
+ *--------------------- */
+
+.products .collapse .has-child > a {
+	position: relative;
+	font-weight: var(--fw7);
+	text-transform: uppercase;
+	padding: 1em 1.25em;
+	border-top: 1px solid var(--border-color);
+	gap: 1em;
+	align-items: flex-start;
+}
+
+.products .collapse .has-child > a::before {
+	content: "+";
+	position: absolute;
+	left: 0;
+}
+
+.products .collapse .content {
+	margin: 0 0 1.5em 2em;
+	font-size: var(--font-small);
+}
+
+.products .collapse .content li span:first-child {
+	min-width: 100px;
+	display: inline-flex;
+	font-weight: var(--fw7);
+	text-transform: uppercase;
+}
+
+.products .collapse table {
+	line-height: 3em;
+}
+
+.products .collapse table thead th {
+	vertical-align: bottom;
+	border-bottom: 2px solid var(--dark-color);
+}
+
+.products .collapse table :where(th, td) {
+	border-bottom: 1px solid var(--border-color);
+	padding-left: 2em;
+}
+
+.products .collapse .content {
+	display: none;
+}
+
+.products .collapse .expand .content {
+	display: flex;
+}
+
+.products .collapse .expand > a::before {
+	content: "-";
+}
+
+/* 08. Page single
+ * e. Product Review
+ *--------------------- */
+
+.products .reviews h4 {
+	font-size: 2em;
+	color: var(--light-text-color);
+	padding-top: 1em;
+	margin: 1em 0 0.5em;
+	border-top: 1px solid var(--border-color);
+}
+
+.products .review-block {
+	color: initial;
+}
+
+.products .review-block-head > a {
+	display: block;
+	font-size: 1.25em;
+	width: var(--percent100);
+	margin-top: 1em;
+	text-align: center;
+}
+
+.products .review-block-head .rate-sum {
+	position: relative;
+	font-size: 4em;
+	font-weight: var(--fw7);
+	padding-right: 0.5em;
+}
+
+.products .review-block-head .rate-sum::before {
+	content: "";
+	width: 2px;
+	height: 50px;
+	display: block;
+	position: absolute;
+	top: 10px;
+	right: 13px;
+	transform: rotate(22deg);
+	background-color: var(--light-bg-color);
+}
+
+.products .review-block-body .item {
+	gap: 1em;
+	padding-bottom: 2.5em;
+	margin-top: 3.5em;
+}
+
+.products .review-block-body :where(.person, .review-title) {
+	font-weight: var(--fw7);
+	text-transform: uppercase;
+}
+
+.products .review-block-body :where(.review-title, .view-all) {
+	font-size: 1.25em;
+	justify-content: end;
+}
+
+.products .review-block-body .item:not(:last-child) {
+	border-bottom: 1px solid var(--border-color);
+}
+
+/* 08. Page single
+ * f. Product Review Form
+ *--------------------- */
+
+.review-form .rating {
+	flex-wrap: wrap;
+}
+
+.review-form p {
+	font-size: 1.25em;
+	margin-right: 1em;
+}
+
+.review-form .rate-this input {
+	display: none;
+}
+
+.review-form .rate-this label {
+	float: right;
+	font-size: 2em;
+	color: var(--secondary-dark-color);
+}
+
+.rate-this > input:checked ~ label,
+.rate-this:not(:checked) > label:hover,
+.rate-this:not(:checked) > label:hover ~ label {
+	color: #f1c40e;
+}
+
+.rate-this > input:checked + label:hover,
+.rate-this > input:checked ~ label:hover,
+.rate-this > label:hover ~ input:checked ~ label,
+.rate-this > input:checked ~ label:hover ~ label {
+	color: #ffed85;
+}
+
+.review-form form {
+	margin-top: 2.5em;
+}
+
+form p {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 2em;
+}
+
+form :where(input, textarea) {
+	line-height: 1;
+	padding: 1em;
+	border: 1px solid var(--border-color);
+	outline: 0;
+}
+
+form label {
+	font-weight: var(--fw5);
+	margin-bottom: 0.5em;
+	text-transform: uppercase;
+}
+
+/* ----------------------
  * -----15. RESPONSIVE------ 
  *--------------------- */
 @media screen and (min-width: 481px) {
 	.products.main .item {
 		flex: 0 0 50%;
+	}
+
+	/* page single */
+	.products.one .big-image {
+		margin-bottom: 2em;
+	}
+
+	.products.one .image-show {
+		height: 680px;
+	}
+
+	.products.one .thumbnail-show {
+		height: 160px;
 	}
 }
 
@@ -1288,6 +1738,17 @@ form.search button:hover {
 
 	.products.main .item {
 		flex: 0 0 33.3333%;
+	}
+
+	.products.one .row {
+		flex: 0 0 50%;
+		width: 50%;
+	}
+
+	.products.one .is_sticky,
+	.is_sticky {
+		position: sticky;
+		top: 2em;
 	}
 }
 
@@ -1512,4 +1973,21 @@ form.search button:hover {
 		justify-content: space-between;
 		align-items: center;
 	}
+
+	/* Page Single */
+	#page:not(.page-home) .dpt-menu {
+		display: none;
+	}
+
+	#page.showdpt .dpt-menu {
+		display: block;
+	}
+
+	.products.one .flexwrap > .row:last-child > item {
+		padding-left: 2em;
+	}
+
+
+
+
 }
