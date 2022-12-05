@@ -1704,7 +1704,29 @@ form label {
 }
 
 /* ----------------------
- * -----15. RESPONSIVE------ 
+ * -----09. Page single: special offer------
+ *--------------------- */
+
+.page-single .stock {
+	margin: 2em 0;
+}
+
+.page-single .stock .qty span:last-child {
+	color: initial;
+}
+
+.page-single .stock .bar {
+	height: 10px;
+}
+
+.page-single .stock .bar .available {
+	margin: 0;
+	border-radius: 0;
+	background-color: var(--secondary-dark-color);
+}
+
+/* ----------------------
+ * -----15. RESPONSIVE------
  *--------------------- */
 @media screen and (min-width: 481px) {
 	.products.main .item {
@@ -1986,8 +2008,4 @@ form label {
 	.products.one .flexwrap > .row:last-child > item {
 		padding-left: 2em;
 	}
-
-
-
-
 }
