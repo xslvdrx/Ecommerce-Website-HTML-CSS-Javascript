@@ -1248,7 +1248,7 @@ form.search button:hover {
 
 /* ----------------------
  * -----07. Overlay------ 
- *--------------------- */
+ *--------------------- 
 .overlay {
 	position: fixed;
 	width: var(--percent100);
@@ -1256,7 +1256,7 @@ form.search button:hover {
 	top: 0;
 	left: 0;
 	z-index: 999;
-	background-color: rgba(0, 0, 0, 0.4);
+	background-color: rgba(0 0 0 / 0.4);
 	visibility: hidden;
 	opacity: 0;
 	will-change: visibility, opacity;
@@ -1265,7 +1265,8 @@ form.search button:hover {
 :where(.showmenu, .showmodal) .overlay {
 	opacity: 1;
 	visibility: inherit;
-}
+} 
+*/
 
 /* ----------------------
  * 08. Page Single 
