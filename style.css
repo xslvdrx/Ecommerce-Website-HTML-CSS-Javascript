@@ -1262,7 +1262,7 @@ form.search button:hover {
 	will-change: visibility, opacity;
 }
 
-.showmenu .overlay {
+:where(.showmenu, .showmodal) .overlay {
 	opacity: 1;
 	visibility: inherit;
 }
@@ -2341,6 +2341,87 @@ input[type="range"]::-webkit-slider-thumb {
 	color: var(--light-text-color);
 	font-size: 0.85em;
 	margin-top: 0.5em;
+}
+
+/* ----------------------
+ * -----14. Modal------
+ *--------------------- */
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	max-width: 600px;
+	width: 90%;
+	height: max-content;
+	padding: 2em;
+	margin: auto;
+	text-align: center;
+	background-color: var(--light-bg-color);
+	z-index: 1000;
+	visibility: hidden;
+	opacity: 0;
+	transform: translateY(20px);
+	transition: transform 0.2s, visibility 0.2s, opacity 0.2s;
+}
+
+.showmodal .modal {
+	visibility: visible;
+	opacity: 1;
+	transform: translateY(0);
+	transition: transform 1s, visibility 1s, opacity 1s;
+}
+
+.modal .image {
+	position: relative;
+	height: calc(150px + 10vw);
+	overflow: hidden;
+	max-height: 400px;
+	margin: -2em -2em 0 -2em;
+}
+
+.modal h2 {
+	font-size: 1.75em;
+	text-transform: uppercase;
+	max-width: 300px;
+	margin: 0.5em auto;
+	line-height: 1;
+}
+
+.modal p {
+	margin-bottom: 1em;
+	color: var(--light-text-color);
+}
+
+.modal .t-close {
+	position: absolute;
+	top: 1em;
+	right: 1em;
+}
+
+.backtotop a {
+	justify-content: center;
+	width: 4em;
+	height: 4em;
+	position: fixed;
+	bottom: 4em;
+	right: 6em;
+	text-align: center;
+	gap: 0;
+	font-size: var(--font-small);
+	padding-block-end: 0.5em 1em;
+	border-radius: 50px;
+	z-index: 999;
+	background-color: var(--light-bg-color);
+	transition: var(--trans-background-color);
+}
+
+.backtotop a:hover {
+	background-color: var(--dark-color);
+	color: var(--white-color);
+	transition: 1s;
 }
 
 /* ----------------------
