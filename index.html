@@ -68,10 +68,10 @@
                             <div class="logo"><a href="/"><span class="circle"></span>.Store</a></div>
                             <nav class="mobile-hide">
                                 <ul class="flexitem second-links">
-                                    <li><a href="#">Home</a></li>
+                                    <li><a href="index.html">Home</a></li>
                                     <li><a href="#">Shop</a></li>
                                     <li class="has-child">
-                                        <a href="#">Women
+                                        <a href="page-category.html">Women
                                             <div class="icon-small"><i class="ri-arrow-down-s-line"></i></div>
                                         </a>
                                         <div class="mega">
@@ -507,15 +507,15 @@
                                         <div class="offer">
                                             <p>Offer ends at</p>
                                             <ul class="flexcenter">
-                                                <li>1</li>
-                                                <li>15</li>
-                                                <li>27</li>
-                                                <li>60</li>
+                                                <li id="days"></li>
+                                                <li id="hours"></li>
+                                                <li id="minutes"></li>
+                                                <li id="seconds"></li>
                                             </ul>
                                         </div>
                                         <div class="media">
                                             <div class="image">
-                                                <a href="#">
+                                                <a href="page-offer.html">
                                                     <img src="assets/products/apparel4.jpg" alt="">
                                                 </a>
                                             </div>
@@ -753,7 +753,7 @@
                                     <div class="item">
                                         <div class="media">
                                             <div class="thumbnail object-cover">
-                                                <a href="">
+                                                <a href="#">
                                                     <img src="assets/products/home2.jpg" alt="">
                                                 </a>
                                             </div>
@@ -1395,6 +1395,41 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+    <!-- Display the countdown timer in an element -->
+<!-- <p id="demo"></p> -->
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Dec 13, 2023 15:13:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("days").innerHTML = days + "d";
+  document.getElementById("hours").innerHTML = hours + "h";
+  document.getElementById("minutes").innerHTML = minutes + "m";
+  document.getElementById("seconds").innerHTML = seconds + "s";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
 </body>
 
 </html>

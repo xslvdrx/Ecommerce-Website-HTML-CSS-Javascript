@@ -758,7 +758,7 @@ form.search button:hover {
 
 .products .offer ul li {
 	position: relative;
-	width: 34px;
+	width: auto;
 	height: 34px;
 	padding: 0.5em;
 	line-height: initial;
@@ -1742,7 +1742,7 @@ form label {
 }
 
 .related-products .offer ul li {
-	width: 28px;
+	width: auto;
 	height: 28px;
 	font-size: var(--font-small);
 	padding: 0.5em 0.25em;
