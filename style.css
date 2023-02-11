@@ -1742,7 +1742,7 @@ form label {
 }
 
 .related-products .offer ul li {
-	width: auto;
+	width: 28px;
 	height: 28px;
 	font-size: var(--font-small);
 	padding: 0.5em 0.25em;
